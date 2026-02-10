@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Cutieee Bandariya.. 👀</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+  overflow:hidden;
+}
+
+/* Background bubbles */
+.bg span{
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:rgba(255,255,255,0.25);
+  border-radius:50%;
+  animation:floatBg 20s linear infinite;
+}
+
+@keyframes floatBg{
+  from{transform:translateY(100vh) scale(0.6);}
+  to{transform:translateY(-10vh) scale(1.4);}
+}
+
+/* Card */
+.card{
+  backdrop-filter:blur(16px);
+  background:rgba(255,255,255,0.75);
+  padding:32px;
+  border-radius:26px;
+  text-align:center;
+  width:90%;
+  max-width:370px;
+  animation:pop 1s ease, heartbeat 2.6s infinite;
+  box-shadow:0 0 40px rgba(255,105,135,0.45);
+  z-index:2;
+}
+
+@keyframes pop{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+}
+
+h1{color:#ff4d6d;margin-bottom:18px;}
+
+button{
+  background:linear-gradient(135deg,#ff4d6d,#ff758f);
+  color:white;
+  border:none;
+  padding:13px 28px;
+  border-radius:30px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(255,77,109,0.45);
+}
+
+/* 🌸 FULLSCREEN HIDDEN MESSAGE – FRIENDSHIP THEME */
+.hidden-screen{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,105,180,0.35), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,215,0,0.30), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(173,216,230,0.35), transparent 45%),
+    linear-gradient(135deg,#fff0f5,#e6f7ff);
+
+  background-size:200% 200%;
+  animation:bgFlow 18s ease-in-out infinite;
+
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  z-index:5;
+  overflow:hidden;
+}
+
+@keyframes bgFlow{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Friendship doodle icons */
+.hidden-screen::before{
+  content:"🤍 🌸 ⭐ 😊 💗 🤗 ✨ 🌈";
+  position:absolute;
+  inset:0;
+  font-size:34px;
+  opacity:0.15;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height:3;
+  letter-spacing:14px;
+  pointer-events:none;
+}
+
+/* soft floating doodles */
+.hidden-screen::after{
+  content:"💗 ⭐ 😊 🌸";
+  position:absolute;
+  inset:-20%;
+  font-size:60px;
+  opacity:0.08;
+  animation:doodleFloat 30s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes doodleFloat{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120px);}
+}
+
+/* Message box */
+.message-box{
+  background:rgba(255,255,255,0.78);
+  padding:26px;
+  border-radius:24px;
+  max-width:380px;
+  width:90%;
+  line-height:1.9;
+  animation:fadeIn 1.6s ease, glow 4s infinite;
+  position:relative;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes glow{
+  0%,100%{box-shadow:0 0 20px rgba(255,182,193,0.45);}
+  50%{box-shadow:0 0 40px rgba(255,182,193,0.8);}
+}
+
+/* Floating emojis */
+.float{
+  position:absolute;
+  font-size:22px;
+  animation:floatEmoji linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatEmoji{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+
+/* Stars */
+.star{
+  position:absolute;
+  color:white;
+  font-size:8px;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:0.2;}
+  to{opacity:1;}
+}
+
+/* Goodbye */
+.goodbye{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#2c2c2c,#000);
+  color:#ffb6c1;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.goodbye h2{
+  font-size:34px;
+  letter-spacing:3px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+  <span style="left:15%"></span>
+  <span style="left:45%"></span>
+  <span style="left:75%"></span>
+</div>
+
+<div class="card" id="mainCard">
+  <h1>Hey Cutieee Bandariya... 👀</h1>
+  <button onclick="showLove()">Tap Me 💗</button>
+</div>
+
+<div class="hidden-screen" id="hiddenScreen">
+  <div class="message-box">
+    <strong>Dear Bandariya Diduuu… 😇</strong><br><br>
+
+    Forever thankful for a bond jo sirf friend se kahin zyada hai —  
+    Aap ❤️ se meri behen ho.👻<br><br>
+
+    Mere liye kuch karna hai to bas apna khayal rakhna 🤗  
+    Aur hmesha apne dreams ko priority dena✨<br><br>
+
+    I will always miss you bcoz  
+    aap jaise mujhe smile karana  
+    kisi aur ko nahi aata… 🥹💗<br><br>
+
+    <strong>Miss you forever.. 👻</strong><br><br>
+
+    <button onclick="finalGoodbye()">One Last Tap 🌙</button>
+  </div>
+</div>
+
+<div class="goodbye" id="goodbyeScreen">
+  <h2>Byeeeeeee 🤍<br>Miss u Forever 👻</h2>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c8c8c0d6b.mp3">
+</audio>
+
+<script>
+function createStars(target,count){
+  for(let i=0;i<count;i++){
+    const s=document.createElement("div");
+    s.className="star";
+    s.innerHTML="✦";
+    s.style.left=Math.random()*100+"vw";
+    s.style.top=Math.random()*100+"vh";
+    target.appendChild(s);
+  }
+}
+
+function floatingEmojis(){
+  setInterval(()=>{
+    const emojis=["💗","❤️","✨","⭐","😊","🌸"];
+    const e=document.createElement("div");
+    e.className="float";
+    e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left=Math.random()*100+"vw";
+    e.style.bottom="0";
+    e.style.animationDuration=(Math.random()*4+6)+"s";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),9000);
+  },700);
+}
+
+function showLove(){
+  mainCard.style.display="none";
+  hiddenScreen.style.display="flex";
+  bgMusic.volume=0.15;
+  bgMusic.play();
+  createStars(hiddenScreen,45);
+  floatingEmojis();
+}
+
+function finalGoodbye(){
+  bgMusic.pause();
+  hiddenScreen.style.display="none";
+  goodbyeScreen.style.display="flex";
+  createStars(goodbyeScreen,60);
+}
+</script>
+
+</body>
+  </html>
